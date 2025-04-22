@@ -43,7 +43,7 @@ const recommendedPanelCount = computed(() => {
 
 <template>
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="w-[500px] p-8 bg-white rounded-xl shadow-lg mt-8 mb-8">
+        <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-4 sm:p-8 bg-white rounded-xl shadow-lg mt-8 mb-8">
             <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Solar Panel System Calculator</h1>
             <div class="flex flex-col items-center space-y-4">
                 <div class="w-96">
@@ -177,7 +177,7 @@ const recommendedPanelCount = computed(() => {
             <!-- Footer -->
             <div class="mt-8 pt-6 border-t border-gray-200 text-center">
                 <p class="text-sm text-gray-600">
-                    Made by AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-blue-600 hover:underline">Jolo Balbin</a>.
+                    Made by AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-blue-600 hover:underline">Jolo</a>.
                 </p>
             </div>
         </div>
