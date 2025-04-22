@@ -87,14 +87,14 @@ const recommendedPanelCount = computed(() => {
                 <div class="w-full sm:w-96 mt-4 p-3 sm:p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-3 sm:space-y-4">
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
                         <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
-                            <p class="text-sm font-medium text-gray-700 mb-1">System Capacity</p>
-                            <p class="text-lg sm:text-xl font-bold text-gray-800">{{ recommendedSystemSize }} kWp</p>
-                        </div>
-                        <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                             <p class="text-sm font-medium text-gray-700 mb-1">Solar Panels</p>
                             <p class="text-lg sm:text-xl font-bold text-gray-800">
                                 {{ recommendedPanelCount }} <span class="text-xs sm:text-sm font-normal text-gray-600">({{ selectedPanelWattage }}W panels)</span>
                             </p>
+                        </div>
+                        <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
+                            <p class="text-sm font-medium text-gray-700 mb-1">System Capacity</p>
+                            <p class="text-lg sm:text-xl font-bold text-gray-800">{{ recommendedSystemSize }} kWp</p>
                         </div>
                     </div>
 
