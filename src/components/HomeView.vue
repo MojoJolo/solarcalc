@@ -177,7 +177,7 @@ const recommendedPanelCount = computed(() => {
             <!-- Footer -->
             <div class="mt-8 pt-6 border-t border-gray-200 text-center">
                 <p class="text-sm text-gray-600">
-                    Made by AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-blue-600 hover:underline">Jolo</a>.
+                    Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-blue-600 hover:underline">Jolo</a>.
                 </p>
             </div>
         </div>
