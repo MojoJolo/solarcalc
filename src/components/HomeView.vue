@@ -43,11 +43,11 @@ const recommendedPanelCount = computed(() => {
 
 <template>
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-4 sm:p-8 bg-white rounded-xl shadow-lg mt-8 mb-8">
-            <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Solar Panel System Calculator</h1>
-            <div class="flex flex-col items-center space-y-4">
-                <div class="w-96">
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Electricity Rate (₱ per kWh)</label>
+        <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-2 sm:p-4 md:p-8 bg-white rounded-xl shadow-lg mt-4 mb-4 sm:mt-8 sm:mb-8">
+            <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-gray-800">Solar Panel System Calculator</h1>
+            <div class="flex flex-col items-center space-y-3 sm:space-y-4">
+                <div class="w-full sm:w-96">
+                    <label class="block mb-1 sm:mb-2 text-sm font-medium text-gray-700">Electricity Rate (₱ per kWh)</label>
                     <div class="relative">
                         <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₱</span>
                         <input 
@@ -59,8 +59,8 @@ const recommendedPanelCount = computed(() => {
                     </div>
                 </div>
                 
-                <div class="w-96">
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Current Monthly Electricity Bill</label>
+                <div class="w-full sm:w-96">
+                    <label class="block mb-1 sm:mb-2 text-sm font-medium text-gray-700">Current Monthly Electricity Bill</label>
                     <div class="relative">
                         <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₱</span>
                         <input 
@@ -72,8 +72,8 @@ const recommendedPanelCount = computed(() => {
                     </div>
                 </div>
                 
-                <div class="w-96">
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Desired Energy Savings: {{ targetSavings }}%</label>
+                <div class="w-full sm:w-96">
+                    <label class="block mb-1 sm:mb-2 text-sm font-medium text-gray-700">Desired Energy Savings: {{ targetSavings }}%</label>
                     <input 
                         type="range" 
                         v-model="targetSavings"
@@ -84,27 +84,27 @@ const recommendedPanelCount = computed(() => {
                     >
                 </div>
 
-                <div class="w-96 mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-3 bg-white rounded-lg border border-gray-200">
+                <div class="w-full sm:w-96 mt-4 p-3 sm:p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-3 sm:space-y-4">
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                             <p class="text-sm font-medium text-gray-700 mb-1">System Capacity</p>
-                            <p class="text-xl font-bold text-gray-800">{{ recommendedSystemSize }} kWp</p>
+                            <p class="text-lg sm:text-xl font-bold text-gray-800">{{ recommendedSystemSize }} kWp</p>
                         </div>
-                        <div class="p-3 bg-white rounded-lg border border-gray-200">
+                        <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                             <p class="text-sm font-medium text-gray-700 mb-1">Solar Panels</p>
-                            <p class="text-xl font-bold text-gray-800">
-                                {{ recommendedPanelCount }} <span class="text-sm font-normal text-gray-600">({{ selectedPanelWattage }}W panels)</span>
+                            <p class="text-lg sm:text-xl font-bold text-gray-800">
+                                {{ recommendedPanelCount }} <span class="text-xs sm:text-sm font-normal text-gray-600">({{ selectedPanelWattage }}W panels)</span>
                             </p>
                         </div>
                     </div>
 
-                    <div class="pt-4 border-t border-gray-200">
+                    <div class="pt-3 sm:pt-4 border-t border-gray-200">
                         <p class="text-sm font-medium text-gray-700 mb-1">Estimated Monthly Savings</p>
-                        <p class="text-lg font-semibold text-gray-800">₱{{ savingsAmount }}</p>
+                        <p class="text-base sm:text-lg font-semibold text-gray-800">₱{{ savingsAmount }}</p>
                     </div>
                 </div>
 
-                <div class="w-96 mt-8 pt-6 border-t border-gray-200">
+                <div class="w-full sm:w-96 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                     <button 
                         @click="isConfigExpanded = !isConfigExpanded"
                         class="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-gray-900 focus:outline-none"
@@ -122,11 +122,11 @@ const recommendedPanelCount = computed(() => {
                     </button>
                     
                     <div 
-                        class="mt-4 space-y-6 transition-all duration-200 ease-in-out"
+                        class="mt-3 sm:mt-4 space-y-4 sm:space-y-6 transition-all duration-200 ease-in-out"
                         :class="{ 'max-h-0 overflow-hidden': !isConfigExpanded, 'max-h-96': isConfigExpanded }"
                     >
                         <div>
-                            <label class="block mb-2 text-sm font-medium text-gray-700">Panel Wattage: {{ selectedPanelWattage }}W</label>
+                            <label class="block mb-1 sm:mb-2 text-sm font-medium text-gray-700">Panel Wattage: {{ selectedPanelWattage }}W</label>
                             <input 
                                 type="range" 
                                 v-model="selectedPanelWattage"
@@ -142,7 +142,7 @@ const recommendedPanelCount = computed(() => {
                         </div>
 
                         <div>
-                            <label class="block mb-2 text-sm font-medium text-gray-700">System Efficiency: {{ systemEfficiency }}%</label>
+                            <label class="block mb-1 sm:mb-2 text-sm font-medium text-gray-700">System Efficiency: {{ systemEfficiency }}%</label>
                             <input 
                                 type="range" 
                                 v-model="systemEfficiency"
@@ -151,32 +151,32 @@ const recommendedPanelCount = computed(() => {
                                 step="1"
                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
                             >
-                            <p class="mt-2 text-sm text-gray-600">Includes panel efficiency, inverter loss, and other system losses</p>
+                            <p class="mt-2 text-xs sm:text-sm text-gray-600">Includes panel efficiency, inverter loss, and other system losses</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- FAQ Section -->
-            <div class="mt-15 pt-15 border-t border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="border border-gray-200 rounded-lg p-4">
+            <div class="mt-8 sm:mt-15 pt-6 sm:pt-15 border-t border-gray-200">
+                <h2 class="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4">Frequently Asked Questions</h2>
+                <div class="space-y-3 sm:space-y-4">
+                    <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
                         <h3 class="font-medium text-gray-700">How accurate is this calculator?</h3>
-                        <p class="mt-2 text-sm text-gray-600">This calculator provides estimates based on average conditions in the Philippines. Actual results may vary based on your location, roof orientation, shading, and other factors.</p>
+                        <p class="mt-2 text-xs sm:text-sm text-gray-600">This calculator provides estimates based on average conditions in the Philippines. Actual results may vary based on your location, roof orientation, shading, and other factors.</p>
                     </div>
 
-                    <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
                         <h3 class="font-medium text-gray-700">What is the source of the electricity rate?</h3>
-                        <p class="mt-2 text-sm text-gray-600">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
-                        <p class="mt-2 text-sm text-gray-500">Source: <a href="https://company.meralco.com.ph/news-and-advisories/higher-rates-april-2025" target="_blank" class="text-blue-600 hover:underline">Meralco April 2025 Rates</a></p>
+                        <p class="mt-2 text-xs sm:text-sm text-gray-600">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
+                        <p class="mt-2 text-xs sm:text-sm text-gray-500">Source: <a href="https://company.meralco.com.ph/news-and-advisories/higher-rates-april-2025" target="_blank" class="text-blue-600 hover:underline">Meralco April 2025 Rates</a></p>
                     </div>
                 </div>
             </div>
 
             <!-- Footer -->
-            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
-                <p class="text-sm text-gray-600">
+            <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
+                <p class="text-xs sm:text-sm text-gray-600">
                     Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-blue-600 hover:underline">Jolo</a>.
                 </p>
             </div>
