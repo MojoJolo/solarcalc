@@ -17,5 +17,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/solarcalc/' // Replace with your repository name
+  base: '/' // Using root path for custom domain
 })
