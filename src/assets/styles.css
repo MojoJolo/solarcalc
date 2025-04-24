@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+/* Custom focus styles */
+input:focus, 
+textarea:focus,
+select:focus {
+  outline: 2px solid #fbbf24 !important; /* Tailwind's yellow-400 */
+  outline-offset: 2px !important;
+  border-color: transparent !important;
+}
+
+/* Remove default focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none !important;
+}
