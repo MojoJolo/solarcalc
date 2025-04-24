@@ -184,13 +184,19 @@ const recommendedPanelCount = computed(() => {
                             <p class="mt-2 text-xs sm:text-sm text-gray-600">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
                             <p class="mt-2 text-xs sm:text-sm text-gray-500">Source: <a href="https://company.meralco.com.ph/news-and-advisories/higher-rates-april-2025" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Meralco April 2025 Rates</a></p>
                         </div>
+
+                        <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
+                            <h3 class="font-medium text-[#333333]">What is Solar Tayo?</h3>
+                            <p class="mt-2 text-xs sm:text-sm text-gray-600">Solar Tayo is an independent website that helps you estimate how many solar panels you need based on your electricity bill and savings goal. Whether you're just curious or seriously planning to go solar, Solar Tayo gives you a simple way to calculate your potential savings.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Footer -->
                 <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
                     <p class="text-xs sm:text-sm text-gray-600">
-                        Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Jolo</a>.
+                        Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Jolo</a> • 
+                        Follow me on <a href="https://x.com/MojoJolo" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">X</a>
                     </p>
                 </div>
             </div>
