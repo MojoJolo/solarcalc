@@ -48,8 +48,17 @@ const annualSavings = computed(() => {
 
 const roiYears = computed(() => {
     if (!totalSystemCost.value || !annualSavings.value) return 0
-    return (Number(totalSystemCost.value.replace(/,/g, '')) / Number(annualSavings.value.replace(/,/g, ''))).toFixed(2)
+    const cost = Number(totalSystemCost.value.toString().replace(/,/g, ''))
+    const savings = Number(annualSavings.value.replace(/,/g, ''))
+    return (cost / savings).toFixed(2)
 })
+
+const formatSystemCost = (event) => {
+    const value = event.target.value.replace(/,/g, '')
+    if (!isNaN(value)) {
+        totalSystemCost.value = formatNumber(value)
+    }
+}
 
 </script>
 
@@ -237,8 +246,9 @@ const roiYears = computed(() => {
                                 <div class="relative">
                                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
                                     <input 
-                                        type="number" 
+                                        type="text" 
                                         v-model="totalSystemCost"
+                                        @input="formatSystemCost"
                                         placeholder="Enter total system cost"
                                         class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                                     >
