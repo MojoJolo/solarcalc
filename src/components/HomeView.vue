@@ -1,22 +1,24 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-// Constants for calculations
+// Constants
 const MIN_PANEL_WATTAGE = 300
 const MAX_PANEL_WATTAGE = 600
-const HOURS_PER_DAY = 130 // average sun hours per year / 365
-const KW_TO_WATTS = 1000 // conversion factor
-const DEFAULT_EFFICIENCY = 0.80 // 80% system efficiency (including panel efficiency, inverter loss, etc.)
+const PEAK_SUN_HOURS_PER_MONTH = 130 // ~4.3 peak sun hours/day × 30 days (Philippines average)
+const WATTS_PER_KW = 1000
+const DEFAULT_EFFICIENCY = 80 // percent
 
-const monthlyBill = ref('10000')
-const targetSavings = ref(50) // Default to 50%
+// Reactive state — all numbers, no mixed string/number types
+const monthlyBill = ref(10000)
+const targetSavings = ref(50)
 const costPerKwh = ref(13.0127)
-const systemEfficiency = ref(DEFAULT_EFFICIENCY * 100) // Convert to percentage for display
-const selectedPanelWattage = ref(550) // Default to 550W
-const isConfigExpanded = ref(false) // Controls visibility of system configuration
-const isHowToUseExpanded = ref(false) // Controls visibility of how to use section
-const totalSystemCost = ref('300000') // Default system cost in PHP
+const systemEfficiency = ref(DEFAULT_EFFICIENCY)
+const selectedPanelWattage = ref(550)
+const totalSystemCost = ref(300000)
+const isConfigExpanded = ref(false)
+const isHowToUseExpanded = ref(false)
 
+// Format a number for display (commas, up to 2 decimal places)
 const formatNumber = (num) => {
     return Number(num).toLocaleString('en-US', {
         minimumFractionDigits: 0,
@@ -24,39 +26,39 @@ const formatNumber = (num) => {
     })
 }
 
+// Raw numeric computed values — keep math and formatting separate
 const savingsAmount = computed(() => {
     if (!monthlyBill.value) return 0
-    return formatNumber(Number(monthlyBill.value) * (targetSavings.value / 100))
+    return monthlyBill.value * (targetSavings.value / 100)
 })
 
 const recommendedSystemSize = computed(() => {
-    if (!monthlyBill.value || !costPerKwh.value) return 0
-    // Adjust system size based on efficiency
-    const baseSize = (monthlyBill.value * (targetSavings.value / 100)) / costPerKwh.value / HOURS_PER_DAY
-    return formatNumber(baseSize / (systemEfficiency.value / 100))
+    if (!monthlyBill.value || !costPerKwh.value || !systemEfficiency.value) return 0
+    const monthlyKwhToOffset = (monthlyBill.value * (targetSavings.value / 100)) / costPerKwh.value
+    return monthlyKwhToOffset / PEAK_SUN_HOURS_PER_MONTH / (systemEfficiency.value / 100)
 })
 
 const recommendedPanelCount = computed(() => {
     if (!recommendedSystemSize.value) return 0
-    return Math.ceil(recommendedSystemSize.value * KW_TO_WATTS / selectedPanelWattage.value)
+    return Math.ceil(recommendedSystemSize.value * WATTS_PER_KW / selectedPanelWattage.value)
 })
 
 const annualSavings = computed(() => {
-    if (!savingsAmount.value) return 0
-    return formatNumber(Number(savingsAmount.value.replace(/,/g, '')) * 12)
+    return savingsAmount.value * 12
 })
 
 const roiYears = computed(() => {
     if (!totalSystemCost.value || !annualSavings.value) return 0
-    const cost = Number(totalSystemCost.value.toString().replace(/,/g, ''))
-    const savings = Number(annualSavings.value.replace(/,/g, ''))
-    return (cost / savings).toFixed(2)
+    return (totalSystemCost.value / annualSavings.value).toFixed(2)
 })
 
+// Handle system cost input: strip commas, store raw number, re-format
 const formatSystemCost = (event) => {
-    const value = event.target.value.replace(/,/g, '')
-    if (!isNaN(value)) {
-        totalSystemCost.value = formatNumber(value)
+    const raw = event.target.value.replace(/,/g, '')
+    const num = Number(raw)
+    if (!isNaN(num) && raw !== '') {
+        totalSystemCost.value = num
+        event.target.value = formatNumber(num)
     }
 }
 
@@ -173,14 +175,14 @@ const formatSystemCost = (event) => {
                             </div>
                             <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                                 <p class="text-sm font-medium text-[#333333] mb-1">System Capacity</p>
-                                <p class="text-lg sm:text-xl font-bold text-[#333333]">{{ recommendedSystemSize }} kWp</p>
+                                <p class="text-lg sm:text-xl font-bold text-[#333333]">{{ formatNumber(recommendedSystemSize) }} kWp</p>
                             </div>
                         </div>
 
                         <div class="pt-3 sm:pt-4 border-t border-gray-200">
                             <p class="text-sm font-medium text-[#333333] mb-1">Estimated Monthly Savings</p>
-                            <p class="text-base sm:text-lg font-semibold text-[#333333]">₱{{ savingsAmount }}</p>
-                            <p class="text-xs text-gray-600 mt-1">Annual Savings: ₱{{ annualSavings }}</p>
+                            <p class="text-base sm:text-lg font-semibold text-[#333333]">₱{{ formatNumber(savingsAmount) }}</p>
+                            <p class="text-xs text-gray-600 mt-1">Annual Savings: ₱{{ formatNumber(annualSavings) }}</p>
                         </div>
                     </div>
 
@@ -245,9 +247,9 @@ const formatSystemCost = (event) => {
                                 <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Total System Cost</label>
                                 <div class="relative">
                                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
-                                    <input 
-                                        type="text" 
-                                        v-model="totalSystemCost"
+                                    <input
+                                        type="text"
+                                        :value="formatNumber(totalSystemCost)"
                                         @input="formatSystemCost"
                                         placeholder="Enter total system cost"
                                         class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
@@ -258,7 +260,7 @@ const formatSystemCost = (event) => {
                             <div class="grid grid-cols-2 gap-3 sm:gap-4">
                                 <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                                     <p class="text-sm font-medium text-[#333333] mb-1">Annual Savings</p>
-                                    <p class="text-lg sm:text-xl font-bold text-[#333333]">₱{{ annualSavings }}</p>
+                                    <p class="text-lg sm:text-xl font-bold text-[#333333]">₱{{ formatNumber(annualSavings) }}</p>
                                 </div>
                                 <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                                     <p class="text-sm font-medium text-[#333333] mb-1">ROI Period</p>
