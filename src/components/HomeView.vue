@@ -80,8 +80,9 @@ const formatSystemCost = (event) => {
         <!-- Calculator Container -->
         <main class="flex-1 flex items-center justify-center w-full py-8">
             <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-2 sm:p-4 md:p-8 bg-white rounded-xl shadow-lg mt-4 mb-4 sm:mt-8 sm:mb-8">
-                <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-[#333333]">Solar Panel System Calculator</h1>
-                
+                <h1 class="text-lg sm:text-xl font-bold mb-2 text-center text-[#333333]">Free Solar Panel Calculator for the Philippines</h1>
+                <h2 class="text-sm sm:text-base text-center text-[#666666] mb-4 sm:mb-6">Enter your Meralco bill to estimate your solar panel system size, cost, and monthly savings.</h2>
+
                 <!-- How to Use Section -->
                 <div class="mb-6">
                     <button 
@@ -322,8 +323,8 @@ const formatSystemCost = (event) => {
                     <!-- Footer -->
                     <footer class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
                         <p class="text-xs sm:text-sm text-gray-600">
-                            Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Jolo</a> • 
-                            Follow me on <a href="https://x.com/MojoJolo" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">X</a>
+                            Solar Tayo, free solar panel calculator for Filipino homeowners.
+                            <br><a href="https://jolo.xyz/" target="_blank" class="text-gray-400 hover:text-[#FFD93D] underline hover:no-underline">Built by Jolo</a>
                         </p>
                     </footer>
                 </div>
