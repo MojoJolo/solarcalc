@@ -128,7 +128,7 @@ const formatSystemCost = (event) => {
                 </div>
 
                 <div class="flex flex-col items-center space-y-3 sm:space-y-4">
-                    <div class="w-full sm:w-96">
+                    <div class="w-full">
                         <label for="cost-per-kwh" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Electricity Rate (₱ per kWh)</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
@@ -143,7 +143,7 @@ const formatSystemCost = (event) => {
                         </div>
                     </div>
                     
-                    <div class="w-full sm:w-96">
+                    <div class="w-full">
                         <label for="monthly-bill" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Current Monthly Electricity Bill</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
@@ -158,7 +158,7 @@ const formatSystemCost = (event) => {
                         </div>
                     </div>
                     
-                    <div class="w-full sm:w-96">
+                    <div class="w-full">
                         <label for="target-savings" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Desired Energy Savings: {{ targetSavings }}%</label>
                         <input
                             id="target-savings"
@@ -172,7 +172,7 @@ const formatSystemCost = (event) => {
                         >
                     </div>
 
-                    <div class="w-full sm:w-96 mt-4 p-3 sm:p-4 bg-[#F5F5F5] border border-gray-200 rounded-lg space-y-3 sm:space-y-4">
+                    <div class="w-full mt-4 p-3 sm:p-4 bg-[#F5F5F5] border border-gray-200 rounded-lg space-y-3 sm:space-y-4">
                         <div class="grid grid-cols-2 gap-3 sm:gap-4">
                             <div class="p-2 sm:p-3 bg-white rounded-lg border border-gray-200">
                                 <p class="text-sm font-medium text-[#333333] mb-1">Solar Panels</p>
@@ -193,7 +193,7 @@ const formatSystemCost = (event) => {
                         </div>
                     </div>
 
-                    <div class="w-full sm:w-96 mt-6 sm:mt-8">
+                    <div class="w-full mt-6 sm:mt-8">
                         <button 
                             @click="isConfigExpanded = !isConfigExpanded"
                             class="flex items-center justify-between w-full text-sm font-medium text-[#333333] border border-[#FFD93D] rounded-lg px-4 py-2 hover:bg-[#FFD93D] transition-colors"
@@ -249,7 +249,7 @@ const formatSystemCost = (event) => {
                         </div>
                     </div>
 
-                    <div class="w-full sm:w-96 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
+                    <div class="w-full mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                         <!-- ROI Section -->
                         <div class="p-3 sm:p-4 bg-[#F5F5F5] border border-gray-200 rounded-lg space-y-3 sm:space-y-4">
                             <h3 class="text-base sm:text-lg font-semibold text-[#333333]">Return on Investment</h3>
