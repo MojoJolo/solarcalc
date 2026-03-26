@@ -1,0 +1,16 @@
+{
+  "name": "Solar Tayo - Solar Panel Calculator Philippines",
+  "short_name": "Solar Tayo",
+  "description": "Calculate your solar panel system requirements in the Philippines. Estimate costs, savings, and ROI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FFD93D",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
