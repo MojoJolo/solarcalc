@@ -5,7 +5,8 @@ import SolarCalculator from '../components/SolarCalculator.vue'
 <template>
     <div class="min-h-screen flex flex-col bg-white">
         <!-- Header -->
-        <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-between border-b-2 border-[#FFD93D]" role="banner">
+        <header class="w-full border-b-2 border-[#FFD93D]" role="banner">
+            <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <RouterLink to="/" class="flex items-center space-x-2">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solar Tayo sun logo">
                     <circle cx="12" cy="12" r="6" fill="#FFD93D"/>
@@ -31,6 +32,7 @@ import SolarCalculator from '../components/SolarCalculator.vue'
                     active-class="text-[#333333] border-b-2 border-[#FFD93D]"
                 >Privacy</RouterLink>
             </nav>
+            </div>
         </header>
 
         <!-- Two-column layout: calculator always left, content always right -->
