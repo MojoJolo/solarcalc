@@ -128,7 +128,7 @@ const formatSystemCost = (event) => {
                 </div>
 
                 <div class="flex flex-col items-center space-y-3 sm:space-y-4">
-                    <div class="w-full sm:w-96">
+                    <div class="w-full">
                         <label for="cost-per-kwh" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Electricity Rate (₱ per kWh)</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
