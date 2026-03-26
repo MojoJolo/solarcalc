@@ -69,7 +69,7 @@ const formatSystemCost = (event) => {
         <!-- Header with Logo -->
         <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-center border-b-2 border-[#FFD93D]" role="banner">
             <div class="flex items-center space-x-2">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solar Tayo sun logo">
                     <circle cx="12" cy="12" r="6" fill="#FFD93D"/>
                     <path d="M12 2V4M12 20V22M4 12H2M22 12H20M5.64 5.64L7.05 7.05M16.95 16.95L18.36 18.36M5.64 18.36L7.05 16.95M16.95 7.05L18.36 5.64" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
                 </svg>
@@ -128,39 +128,45 @@ const formatSystemCost = (event) => {
 
                 <div class="flex flex-col items-center space-y-3 sm:space-y-4">
                     <div class="w-full sm:w-96">
-                        <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Electricity Rate (₱ per kWh)</label>
+                        <label for="cost-per-kwh" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Electricity Rate (₱ per kWh)</label>
                         <div class="relative">
-                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
                             <input
+                                id="cost-per-kwh"
                                 type="number"
                                 v-model="costPerKwh"
                                 step="0.1"
+                                aria-label="Electricity rate in Philippine Pesos per kilowatt-hour"
                                 class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                             >
                         </div>
                     </div>
                     
                     <div class="w-full sm:w-96">
-                        <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Current Monthly Electricity Bill</label>
+                        <label for="monthly-bill" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Current Monthly Electricity Bill</label>
                         <div class="relative">
-                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
-                            <input 
-                                type="number" 
-                                v-model="monthlyBill" 
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
+                            <input
+                                id="monthly-bill"
+                                type="number"
+                                v-model="monthlyBill"
                                 placeholder="Enter your current bill amount"
+                                aria-label="Monthly electricity bill in Philippine Pesos"
                                 class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                             >
                         </div>
                     </div>
                     
                     <div class="w-full sm:w-96">
-                        <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Desired Energy Savings: {{ targetSavings }}%</label>
-                        <input 
-                            type="range" 
+                        <label for="target-savings" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Desired Energy Savings: {{ targetSavings }}%</label>
+                        <input
+                            id="target-savings"
+                            type="range"
                             v-model="targetSavings"
                             min="0"
                             max="100"
                             step="1"
+                            aria-label="Target energy savings percentage"
                             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#FFD93D]"
                         >
                     </div>
@@ -208,13 +214,15 @@ const formatSystemCost = (event) => {
                             :class="{ 'hidden': !isConfigExpanded }"
                         >
                             <div>
-                                <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Panel Wattage: {{ selectedPanelWattage }}W</label>
-                                <input 
-                                    type="range" 
+                                <label for="panel-wattage" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Panel Wattage: {{ selectedPanelWattage }}W</label>
+                                <input
+                                    id="panel-wattage"
+                                    type="range"
                                     v-model="selectedPanelWattage"
                                     :min="MIN_PANEL_WATTAGE"
                                     :max="MAX_PANEL_WATTAGE"
                                     step="10"
+                                    aria-label="Solar panel wattage"
                                     class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#FFD93D]"
                                 >
                                 <div class="flex justify-between text-xs text-gray-500 mt-1">
@@ -224,13 +232,15 @@ const formatSystemCost = (event) => {
                             </div>
 
                             <div>
-                                <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">System Efficiency: {{ systemEfficiency }}%</label>
-                                <input 
-                                    type="range" 
+                                <label for="system-efficiency" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">System Efficiency: {{ systemEfficiency }}%</label>
+                                <input
+                                    id="system-efficiency"
+                                    type="range"
                                     v-model="systemEfficiency"
                                     min="70"
                                     max="95"
                                     step="1"
+                                    aria-label="Solar system efficiency percentage"
                                     class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#FFD93D]"
                                 >
                                 <p class="mt-2 text-xs sm:text-sm text-gray-600">Includes panel efficiency, inverter loss, and other system losses</p>
@@ -244,14 +254,16 @@ const formatSystemCost = (event) => {
                             <h3 class="text-base sm:text-lg font-semibold text-[#333333]">Return on Investment</h3>
                             
                             <div class="w-full">
-                                <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Total System Cost</label>
+                                <label for="system-cost" class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Total System Cost</label>
                                 <div class="relative">
-                                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
+                                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]" aria-hidden="true">₱</span>
                                     <input
+                                        id="system-cost"
                                         type="text"
                                         :value="formatNumber(totalSystemCost)"
                                         @input="formatSystemCost"
                                         placeholder="Enter total system cost"
+                                        aria-label="Total solar system cost in Philippine Pesos"
                                         class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                                     >
                                 </div>
@@ -288,6 +300,21 @@ const formatSystemCost = (event) => {
                             <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
                                 <h3 class="font-medium text-[#333333]">What is Solar Tayo?</h3>
                                 <p class="mt-2 text-xs sm:text-sm text-gray-600">Solar Tayo is an independent website that helps you estimate how many solar panels you need based on your electricity bill and savings goal. Whether you're just curious or seriously planning to go solar, Solar Tayo gives you a simple way to calculate your potential savings.</p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
+                                <h3 class="font-medium text-[#333333]">How many solar panels do I need in the Philippines?</h3>
+                                <p class="mt-2 text-xs sm:text-sm text-gray-600">The number of solar panels depends on your electricity consumption, desired savings, panel wattage, and system efficiency. A typical Filipino household with a ₱5,000–₱10,000 monthly electricity bill may need 4–10 solar panels rated at 550W each. Use the calculator above to get a personalized estimate.</p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
+                                <h3 class="font-medium text-[#333333]">What is the average ROI for solar panels in the Philippines?</h3>
+                                <p class="mt-2 text-xs sm:text-sm text-gray-600">The return on investment for solar panels in the Philippines typically ranges from 5–8 years, depending on system cost, electricity rates, and energy consumption. After the payback period, you enjoy essentially free electricity for the remaining lifespan of the panels (25+ years).</p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
+                                <h3 class="font-medium text-[#333333]">Is net metering available in the Philippines?</h3>
+                                <p class="mt-2 text-xs sm:text-sm text-gray-600">Yes, the Philippines supports net metering through the Renewable Energy Act. If your solar panel system produces more electricity than you consume, the excess is exported to the grid and credited to your bill. Contact your local distribution utility for specific net metering requirements.</p>
                             </div>
                         </div>
                     </section>

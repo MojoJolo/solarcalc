@@ -11,6 +11,10 @@
     <meta name="geo.placename" content="Philippines">
     <meta name="theme-color" content="#FFD93D">
     <link rel="canonical" href="https://solartayo.com/">
+    <link rel="alternate" hreflang="en-PH" href="https://solartayo.com/">
+    <link rel="alternate" hreflang="x-default" href="https://solartayo.com/">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <!-- Open Graph -->
     <meta property="og:title" content="Solar Panel System Calculator Philippines | Estimate Your Solar Needs">
     <meta property="og:description" content="Calculate your solar panel system requirements in the Philippines. Estimate costs, savings, and the number of solar panels needed based on your electricity bill.">
@@ -82,6 +86,30 @@
             "@type": "Answer",
             "text": "Solar Tayo is an independent website that helps you estimate how many solar panels you need based on your electricity bill and savings goal. Whether you're just curious or seriously planning to go solar, Solar Tayo gives you a simple way to calculate your potential savings."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How many solar panels do I need in the Philippines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The number of solar panels depends on your electricity consumption, desired savings, panel wattage, and system efficiency. A typical Filipino household with a ₱5,000–₱10,000 monthly electricity bill may need 4–10 solar panels rated at 550W each."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average ROI for solar panels in the Philippines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The return on investment for solar panels in the Philippines typically ranges from 5–8 years, depending on system cost, electricity rates, and energy consumption. After the payback period, you enjoy essentially free electricity for the remaining lifespan of the panels (25+ years)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is net metering available in the Philippines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Philippines supports net metering through the Renewable Energy Act. If your solar panel system produces more electricity than you consume, the excess is exported to the grid and credited to your bill. Contact your local distribution utility for specific net metering requirements."
+          }
         }
       ]
     }
@@ -97,6 +125,36 @@
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <div style="max-width:600px;margin:0 auto;padding:2rem;font-family:system-ui,sans-serif">
+        <h1>Solar Tayo — Solar Panel System Calculator for the Philippines</h1>
+        <p>Solar Tayo helps Filipino homeowners estimate how many solar panels they need based on their electricity bill. Calculate your solar panel system requirements, estimate costs and savings, and determine your return on investment (ROI) period.</p>
+        <h2>How It Works</h2>
+        <ul>
+          <li>Enter your current Meralco or electricity provider rate per kWh</li>
+          <li>Input your monthly electricity bill amount in Philippine Pesos (₱)</li>
+          <li>Choose your desired energy savings percentage</li>
+          <li>Get instant estimates for the number of solar panels, system capacity in kWp, monthly and annual savings</li>
+          <li>Calculate your return on investment period based on total system cost</li>
+        </ul>
+        <h2>Why Go Solar in the Philippines?</h2>
+        <p>With an average of 4.3 peak sun hours per day, the Philippines is an ideal location for solar energy. Rising electricity costs from providers like Meralco make solar panels an increasingly smart investment for Filipino households. Solar Tayo makes it easy to estimate your potential savings before committing to a solar panel installation.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>How accurate is this calculator?</h3>
+        <p>This calculator provides estimates based on average conditions in the Philippines. Actual results may vary based on your location, roof orientation, shading, and other factors.</p>
+        <h3>What is the source of the electricity rate?</h3>
+        <p>The default electricity rate is based on Meralco's March 2026 residential rates of ₱13.82 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates.</p>
+        <h3>What is Solar Tayo?</h3>
+        <p>Solar Tayo is an independent website that helps you estimate how many solar panels you need based on your electricity bill and savings goal. Whether you're just curious or seriously planning to go solar, Solar Tayo gives you a simple way to calculate your potential savings.</p>
+        <h3>How many solar panels do I need in the Philippines?</h3>
+        <p>The number of solar panels depends on your electricity consumption, desired savings, panel wattage, and system efficiency. A typical Filipino household with a ₱5,000-₱10,000 monthly electricity bill may need 4-10 solar panels rated at 550W each.</p>
+        <h3>What is the average ROI for solar panels in the Philippines?</h3>
+        <p>The return on investment for solar panels in the Philippines typically ranges from 5-8 years, depending on system cost, electricity rates, and energy consumption. After the payback period, you enjoy essentially free electricity for the remaining lifespan of the panels (25+ years).</p>
+        <h3>Is net metering available in the Philippines?</h3>
+        <p>Yes, the Philippines supports net metering through the Renewable Energy Act. If your solar panel system produces more electricity than you consume, the excess is exported to the grid and credited to your bill. Contact your local distribution utility for specific net metering requirements.</p>
+        <p style="margin-top:2rem;color:#666;font-size:0.875rem">Please enable JavaScript to use the interactive solar calculator. Made with the help of <a href="https://jolo.xyz/">Jolo</a>.</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
