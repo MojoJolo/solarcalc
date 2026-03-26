@@ -80,7 +80,7 @@ const formatSystemCost = (event) => {
         <!-- Calculator Container -->
         <main class="flex-1 flex items-center justify-center w-full py-8">
             <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-2 sm:p-4 md:p-8 bg-white rounded-xl shadow-lg mt-4 mb-4 sm:mt-8 sm:mb-8">
-                <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-[#333333]">Solar Panel System Calculator</h1>
+                <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-[#333333]">Free Solar Panel Calculator for the Philippines</h1>
                 
                 <!-- How to Use Section -->
                 <div class="mb-6">
