@@ -11,7 +11,7 @@ const DEFAULT_EFFICIENCY = 80 // percent
 // Reactive state — all numbers, no mixed string/number types
 const monthlyBill = ref(10000)
 const targetSavings = ref(50)
-const costPerKwh = ref(13.0127)
+const costPerKwh = ref(13.82)
 const systemEfficiency = ref(DEFAULT_EFFICIENCY)
 const selectedPanelWattage = ref(550)
 const totalSystemCost = ref(300000)
@@ -112,7 +112,7 @@ const formatSystemCost = (event) => {
                         :class="{ 'hidden': !isHowToUseExpanded }"
                     >
                         <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
-                            <li class="pl-2">Enter your current electricity rate per kWh (default is ₱13.0127 based on Meralco's April 2025 rates)</li>
+                            <li class="pl-2">Enter your current electricity rate per kWh (default is ₱13.82 based on Meralco's March 2026 rates)</li>
                             <li class="pl-2">Input your current monthly electricity bill amount</li>
                             <li class="pl-2">Adjust the desired energy savings percentage using the slider (default is 50%)</li>
                             <li class="pl-2">Click "More System Configuration" to adjust:
@@ -138,7 +138,6 @@ const formatSystemCost = (event) => {
                                 class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                             >
                         </div>
-                        <p class="mt-1 text-xs text-gray-500">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
                     </div>
                     
                     <div class="w-full sm:w-96">
@@ -282,8 +281,8 @@ const formatSystemCost = (event) => {
 
                             <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
                                 <h3 class="font-medium text-[#333333]">What is the source of the electricity rate?</h3>
-                                <p class="mt-2 text-xs sm:text-sm text-gray-600">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
-                                <p class="mt-2 text-xs sm:text-sm text-gray-500">Source: <a href="https://company.meralco.com.ph/news-and-advisories/higher-rates-april-2025" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Meralco April 2025 Rates</a></p>
+                                <p class="mt-2 text-xs sm:text-sm text-gray-600">The default electricity rate is based on Meralco's March 2026 residential rates of ₱13.82 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
+                                <p class="mt-2 text-xs sm:text-sm text-gray-500">Source: <a href="https://company.meralco.com.ph/news-and-advisories/higher-rates-april-2025" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Meralco March 2026 Rates</a></p>
                             </div>
 
                             <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
