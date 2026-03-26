@@ -67,7 +67,7 @@ const formatSystemCost = (event) => {
 <template>
     <div class="min-h-screen flex flex-col items-center bg-white">
         <!-- Header with Logo -->
-        <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-center border-b-2 border-[#FFD93D]" role="banner">
+        <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-start border-b-2 border-[#FFD93D]" role="banner">
             <div class="flex items-center space-x-2">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solar Tayo sun logo">
                     <circle cx="12" cy="12" r="6" fill="#FFD93D"/>
@@ -338,7 +338,7 @@ const formatSystemCost = (event) => {
 
             <!-- Blog Column -->
             <div class="flex-1 min-w-0">
-                <h2 class="text-lg font-bold text-[#333333] mb-6 pb-2 border-b-2 border-[#FFD93D]">Solar Tayo Blog</h2>
+                <h2 class="text-lg font-bold text-[#333333] mb-6 pb-2 border-b-2 border-[#FFD93D]">Solar Insights</h2>
                 <div class="space-y-6">
 
                     <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
