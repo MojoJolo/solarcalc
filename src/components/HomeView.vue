@@ -67,7 +67,7 @@ const formatSystemCost = (event) => {
 <template>
     <div class="min-h-screen flex flex-col items-center bg-white">
         <!-- Header with Logo -->
-        <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-center border-b-2 border-[#FFD93D]">
+        <header class="w-full py-4 px-4 sm:px-6 flex items-center justify-center border-b-2 border-[#FFD93D]" role="banner">
             <div class="flex items-center space-x-2">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="6" fill="#FFD93D"/>
@@ -78,7 +78,7 @@ const formatSystemCost = (event) => {
         </header>
 
         <!-- Calculator Container -->
-        <div class="flex-1 flex items-center justify-center w-full py-8">
+        <main class="flex-1 flex items-center justify-center w-full py-8">
             <div class="w-full min-w-[300px] sm:w-[400px] md:w-[500px] p-2 sm:p-4 md:p-8 bg-white rounded-xl shadow-lg mt-4 mb-4 sm:mt-8 sm:mb-8">
                 <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-[#333333]">Solar Panel System Calculator</h1>
                 
@@ -271,8 +271,8 @@ const formatSystemCost = (event) => {
                     </div>
 
                     <!-- FAQ Section -->
-                    <div class="mt-8 sm:mt-15 pt-6 sm:pt-15 border-t border-gray-200">
-                        <h2 class="text-base sm:text-lg font-semibold text-[#333333] mb-3 sm:mb-4">Frequently Asked Questions</h2>
+                    <section class="mt-8 sm:mt-15 pt-6 sm:pt-15 border-t border-gray-200" aria-labelledby="faq-heading">
+                        <h2 id="faq-heading" class="text-base sm:text-lg font-semibold text-[#333333] mb-3 sm:mb-4">Frequently Asked Questions</h2>
                         <div class="space-y-3 sm:space-y-4">
                             <div class="border border-gray-200 rounded-lg p-3 sm:p-4">
                                 <h3 class="font-medium text-[#333333]">How accurate is this calculator?</h3>
@@ -290,17 +290,17 @@ const formatSystemCost = (event) => {
                                 <p class="mt-2 text-xs sm:text-sm text-gray-600">Solar Tayo is an independent website that helps you estimate how many solar panels you need based on your electricity bill and savings goal. Whether you're just curious or seriously planning to go solar, Solar Tayo gives you a simple way to calculate your potential savings.</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <!-- Footer -->
-                    <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
+                    <footer class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
                         <p class="text-xs sm:text-sm text-gray-600">
                             Made using AI with the help of <a href="https://jolo.xyz/" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">Jolo</a> • 
                             Follow me on <a href="https://x.com/MojoJolo" target="_blank" class="text-[#333333] hover:text-[#FFD93D] underline hover:no-underline">X</a>
                         </p>
-                    </div>
+                    </footer>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </template>
