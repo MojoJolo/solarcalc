@@ -131,13 +131,14 @@ const formatSystemCost = (event) => {
                         <label class="block mb-1 sm:mb-2 text-sm font-medium text-[#333333]">Electricity Rate (₱ per kWh)</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#333333]">₱</span>
-                            <input 
-                                type="number" 
+                            <input
+                                type="number"
                                 v-model="costPerKwh"
                                 step="0.1"
                                 class="w-full pl-8 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD93D] focus:border-[#FFD93D] transition-all"
                             >
                         </div>
+                        <p class="mt-1 text-xs text-gray-500">The default electricity rate is based on Meralco's April 2025 residential rates of ₱13.0127 per kWh. This rate includes generation, transmission, and other charges. You can adjust this rate to match your current electricity provider's rates. Rates may vary depending on your location and consumption level.</p>
                     </div>
                     
                     <div class="w-full sm:w-96">
