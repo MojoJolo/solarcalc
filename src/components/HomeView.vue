@@ -83,8 +83,6 @@ const formatSystemCost = (event) => {
                 <h1 class="text-xl sm:text-2xl font-bold mb-2 text-center text-[#333333]">Free Solar Panel Calculator for the Philippines</h1>
                 <h2 class="text-sm sm:text-base text-center text-[#666666] mb-4 sm:mb-6">Enter your Meralco bill to estimate your solar panel system size, cost, and monthly savings.</h2>
 
-                <p class="text-sm text-[#666666] text-center mb-4 sm:mb-6">Solar Tayo is a free tool for Filipino homeowners to estimate their solar panel needs. Based on your monthly Meralco bill, we calculate how many panels you need, your estimated savings, and your ROI.</p>
-
                 <!-- How to Use Section -->
                 <div class="mb-6">
                     <button 
