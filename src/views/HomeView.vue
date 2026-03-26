@@ -11,10 +11,10 @@
                     </svg>
                 </div>
                 <div class="p-5">
-                    <p class="text-xs text-gray-400 mb-1">March 26, 2026</p>
-                    <h3 class="text-base font-semibold text-[#333333] mb-2">Lorem Ipsum: Going Solar in the Philippines</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="#" class="inline-block mt-3 text-sm font-medium text-[#333333] border-b border-[#FFD93D] hover:text-[#FFD93D] transition-colors">Read more →</a>
+                    <p class="text-xs text-gray-400 mb-1">March 26, 2026 · 5 min read</p>
+                    <h3 class="text-base font-semibold text-[#333333] mb-2">How Much Can Solar Panels Save You on Your Meralco Bill? (2026 Philippines Guide)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Rates have climbed roughly 40% since 2020. For a lot of Filipino homeowners, going solar has stopped being a "someday" decision and started being a pretty obvious financial move.</p>
+                    <RouterLink to="/blog/solar-savings-meralco-2026" class="inline-block mt-3 text-sm font-medium text-[#333333] border-b border-[#FFD93D] hover:text-[#FFD93D] transition-colors">Read more →</RouterLink>
                 </div>
             </article>
 
