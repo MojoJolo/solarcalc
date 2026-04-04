@@ -309,7 +309,6 @@ const formatSystemCost = (event) => {
             <footer class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center">
                 <p class="text-xs sm:text-sm text-gray-600">
                     Solar Tayo, free solar panel calculator for Filipino homeowners.
-                    <br><a href="https://jolo.xyz/" target="_blank" class="text-gray-400 hover:text-[#FFD93D] underline hover:no-underline">Built by Jolo</a>
                 </p>
             </footer>
         </div>

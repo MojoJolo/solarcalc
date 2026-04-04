@@ -3,6 +3,9 @@
         <!-- Post header -->
         <div class="mb-8 pb-6 border-b-2 border-[#FFD93D]">
             <p class="text-xs text-gray-400 mb-3">March 26, 2026 · 5 min read</p>
+            <p class="text-sm text-gray-600 mb-3">
+                Written by <RouterLink to="/about" class="text-[#333333] underline hover:text-[#FFD93D] hover:no-underline">Jolo</RouterLink>
+            </p>
             <h1 class="text-xl font-bold text-[#333333] leading-snug">How Much Can Solar Panels Save You on Your Meralco Bill? (2026 Philippines Guide)</h1>
         </div>
 
@@ -72,10 +75,10 @@
             <p>The two numbers that drive your payback period are your monthly bill (higher bill = faster ROI) and your total system cost. The calculator on the left lets you plug in both and immediately see your annual savings and ROI period.</p>
 
             <!-- CTA box -->
-            <div class="bg-[#FFD93D] rounded-xl p-5 my-6">
+            <RouterLink to="/" class="block bg-[#FFD93D] rounded-xl p-5 my-6 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <p class="font-semibold text-[#333333] mb-1">Calculate your ROI now</p>
                 <p class="text-xs text-[#333333]">Enter your monthly bill in the calculator — takes about 30 seconds.</p>
-            </div>
+            </RouterLink>
 
             <!-- Section 5 -->
             <h2 class="text-base font-bold text-[#333333] pt-4">A Few Things to Know Before You Buy</h2>
@@ -97,6 +100,14 @@
             <h2 class="text-base font-bold text-[#333333] pt-4">See What Solar Looks Like for Your Home</h2>
 
             <p>The Solar Tayo calculator is free. Punch in your monthly bill, slide your savings target, add your estimated system cost, and it'll show you exactly how many panels you need, what capacity that is, and how long until you hit ROI.</p>
+
+            <h2 class="text-base font-bold text-[#333333] pt-4">Sources</h2>
+
+            <ul class="space-y-3 pl-4">
+                <li class="flex gap-2"><span class="text-[#FFD93D] font-bold mt-0.5">·</span><span><a href="https://www.meralco.com.ph/residential/electric-service/solar-net-metering" target="_blank" rel="noopener noreferrer" class="text-[#333333] underline hover:text-[#FFD93D] hover:no-underline">Meralco: Solar & Net-Metering</a></span></li>
+                <li class="flex gap-2"><span class="text-[#FFD93D] font-bold mt-0.5">·</span><span><a href="https://www.meralco.com.ph/residential/help-support/frequently-asked-questions/net-metering" target="_blank" rel="noopener noreferrer" class="text-[#333333] underline hover:text-[#FFD93D] hover:no-underline">Meralco FAQ: Net Metering</a></span></li>
+                <li class="flex gap-2"><span class="text-[#FFD93D] font-bold mt-0.5">·</span><span><a href="https://legacy.doe.gov.ph/net-metering/net-metering-guide" target="_blank" rel="noopener noreferrer" class="text-[#333333] underline hover:text-[#FFD93D] hover:no-underline">Department of Energy: Net Metering Guide</a></span></li>
+            </ul>
 
         </div>
 
