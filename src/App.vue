@@ -1,7 +1,7 @@
 <script setup>
-import HomeView from './components/HomeView.vue'
+import AppLayout from './layouts/AppLayout.vue'
 </script>
 
 <template>
-  <HomeView />
+  <AppLayout />
 </template>
