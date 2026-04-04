@@ -64,7 +64,7 @@ const formatSystemCost = (event) => {
 </script>
 
 <template>
-    <div class="w-full p-2 sm:p-4 md:p-8 bg-white rounded-xl shadow-lg">
+    <div class="w-full p-2 sm:p-4 md:p-6 bg-white rounded-xl shadow-lg">
         <h1 class="text-lg sm:text-xl font-bold mb-2 text-center text-[#333333]">Free Solar Panel Calculator for the Philippines</h1>
         <h2 class="text-sm sm:text-base text-center text-[#666666] mb-4 sm:mb-6">Enter your Meralco bill to estimate your solar panel system size, cost, and monthly savings.</h2>
 

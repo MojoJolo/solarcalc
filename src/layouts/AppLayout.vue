@@ -55,12 +55,8 @@ watch(
         >
             <div
                 v-if="isHomeRoute"
-                class="max-w-3xl mx-auto px-4"
+                class="w-full max-w-[500px] mx-auto px-4 sm:px-0"
             >
-                <div class="text-center mb-8">
-                    <h1 class="text-2xl sm:text-3xl font-bold text-[#333333]">Solar Panel Calculator for Filipino Homeowners</h1>
-                    <p class="mt-3 text-sm sm:text-base text-gray-600">Estimate your panel count, system size, monthly savings, and ROI from your current electricity bill.</p>
-                </div>
                 <SolarCalculator />
             </div>
 
