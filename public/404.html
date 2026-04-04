@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solar Tayo</title>
+    <script>
+      // SPA redirect for GitHub Pages
+      // Stores the current path/query/hash in sessionStorage and redirects to /
+      var location = window.location;
+      sessionStorage.redirect = location.pathname + location.search + location.hash;
+      location.replace(location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/');
+    </script>
+  </head>
+  <body></body>
+</html>
