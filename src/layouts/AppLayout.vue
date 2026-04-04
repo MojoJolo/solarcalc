@@ -5,7 +5,6 @@ import SolarCalculator from '../components/SolarCalculator.vue'
 
 const route = useRoute()
 const isHomeRoute = computed(() => route.path === '/')
-const isBlogIndexRoute = computed(() => route.path === '/blog')
 const isCalculatorVisibleOnMobile = ref(false)
 
 watch(
@@ -65,7 +64,7 @@ watch(
 
                     <!-- Calculator Column -->
                     <div
-                        v-if="isBlogIndexRoute || isCalculatorVisibleOnMobile"
+                        v-if="isCalculatorVisibleOnMobile"
                         class="w-full lg:hidden"
                     >
                         <SolarCalculator />
@@ -78,7 +77,6 @@ watch(
                     <!-- Content Column (router-driven) -->
                     <div class="flex-1 min-w-0">
                         <div
-                            v-if="!isBlogIndexRoute"
                             class="mb-4 lg:hidden"
                         >
                             <button
